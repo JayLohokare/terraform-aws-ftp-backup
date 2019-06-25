@@ -1,3 +1,10 @@
-# AWS Lambda for moving files from SFTP to S3
+# Automated data transfer from SFTP to AWS S3
 
-Described in codecentric blog post <strong>Transfer files from Customer's SFTP to AWS S3 (with scheduled time)</strong>.
+move-ftp-files-to-s3<br>
+Contains the NodeJS Lambda code for transfering the data
+
+provision<br>
+Contains the Terraform code (AWS Lambda + Cloud-watch + S3)
+
+Change SFTP credentials and AWS access credentials (terraform.tfvars) to make the code run
+
