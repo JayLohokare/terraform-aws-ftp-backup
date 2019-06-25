@@ -1,0 +1,25 @@
+{
+  "name": "move-ftp-files-to-s3",
+  "version": "1.0.0",
+  "description": "AWS Lambda source for downloading files from FTP to S3.",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "build:for:deployment": "npm run build-ts && rm -Rf node_modules && npm install --only prod",
+    "build-ts": "rm -Rf node_modules && npm install && rm -Rf dist && tsc"
+  },
+  "devDependencies": {
+    "aws-sdk": "latest",
+    "@types/aws-lambda": "^8.10.11",
+    "@types/node": "^8.10.11",
+    "@types/aws-sdk": "^2.7.0",
+    "ts-node": "^7.0.1",
+    "typescript": "3.0.3",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb-base": "^0.2.0"
+  },
+  "dependencies": {
+    "csvtojson": "^2.0.8",
+    "ftp": "^0.3.10"
+  }
+}

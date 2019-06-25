@@ -1,0 +1,38 @@
+### Terraform ###
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+
+*/terraform.tfvars
+
+# Ignore any .tfvars files that are generated automatically for each Terraform run. Most
+# .tfvars files are managed as part of configuration and so should be included in
+# version control.
+#
+# example.tfvars
+
+
+### IntelliJ ###
+/out/
+.idea_modules/
+.idea/
+*.iml
+
+# Dependency directories
+node_modules/
+jspm_packages/
+*zip
+dist
+
+# should be secret
+# ftp-configuration.json
+
+# output
+deployment/
+

@@ -1,0 +1,14 @@
+{
+  "extends": "tslint-config-airbnb-base",
+  "rules": {
+    "ter-max-len": {
+      "options": [120]
+    },
+    "no-console": false,
+    "ter-indent": [true, 4],
+    "ter-padded-blocks": [true, { "blocks": "never", "classes": "always", "switches": "never" }],
+    "trailing-comma": false,
+    "no-use-before-declare": false
+  }
+
+}
