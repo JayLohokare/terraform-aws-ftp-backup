@@ -24,11 +24,18 @@ class MoveFtpFilesToS3Lambda {
         this.ftp.configure(ftpConfig);
         await this.ftp.connect();
         const files = await this.ftp.list(event.ftp_path);
+        
+        console.log("Printing file name");
+        console.log(files);
+        
         for (const ftpFile of files) {
-            const fileStream = await this.ftp.get(`${event.ftp_path}/${ftpFile.name}`);
-            await this.s3.put(fileStream, ftpFile.name, event.s3_bucket);
-            await this.ftp.delete(`${event.ftp_path}/${ftpFile.name}`);
+            if(ftpFile.name != "." && ftpFile.name != ".."){
+                const fileStream = await this.ftp.get(`${event.ftp_path}/${ftpFile.name}`);
+                await this.s3.put(fileStream, ftpFile.name, event.s3_bucket);
+                // yield this.ftp.delete(`${event.ftp_path}/${ftpFile.name}`);
+            }
         }
+
         this.ftp.disconnect();
     }
 

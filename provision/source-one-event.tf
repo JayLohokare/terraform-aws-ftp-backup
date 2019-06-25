@@ -1,7 +1,7 @@
 resource "aws_cloudwatch_event_rule" "source_one_event_rule" {
   name = "source-one-event"
   description = "Fires every five minutes"
-  schedule_expression = "cron(0/5 * * * ? *)"
+  schedule_expression = "cron(0/1 * * * ? *)"
 }
 
 resource "aws_cloudwatch_event_target" "move_files_to_destination_one" {
